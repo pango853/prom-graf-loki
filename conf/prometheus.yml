@@ -28,12 +28,13 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-         - targets: ['localhost:9090','cadvisor:8080','node-exporter:9100', 'nginx-exporter:9113']
+         - targets: ['localhost:9090','cadvisor:8080','node-exporter:9100', 'nginx-exporter:9113','172.16.4.5:9100']
 
   - job_name: 'snmp'
     static_configs:
       - targets:
         - 172.20.0.1  # SNMP device. PLEASE REWRITE THIS!
+        - 172.16.4.5  # Add another node
     metrics_path: /snmp
     params:
       module: [if_mib]
