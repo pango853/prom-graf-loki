@@ -3,14 +3,22 @@
     "targets": [ "172.22.0.1" ],
     "labels": {
       "env": "prod",
-      "job": "snmp"
+      "hostname": "vm1",
+      "system": "systemA",
+      "role": "Web",
+      "snmpCommunity": "public",
+      "mib": "if_mib"
     }
   },
   {
     "targets": [ "172.16.4.5" ],
     "labels": {
       "env": "prod",
-      "job": "snmp"
+      "hostname": "vm2",
+      "system": "systemB",
+      "role": "App",
+      "snmpCommunity": "public",
+      "mib": "if_mib"
     }
   }
 ]
