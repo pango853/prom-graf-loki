@@ -36,10 +36,13 @@ scrape_configs:
         - '/etc/prometheus/sd_configs/prod/node_*.json'
 
   - job_name: 'snmp'
-    static_configs:
-      - targets:
-        - 172.20.0.1  # SNMP device. PLEASE REWRITE THIS!
-        - 172.16.4.5  # Add another node
+    #static_configs:
+    #  - targets:
+    #    - 172.20.0.1  # SNMP device. PLEASE REWRITE THIS!
+    #    - 172.16.4.5  # Add another node
+    file_sd_configs:
+        - files :
+          - '/etc/prometheus/sd_configs/prod/snmp_targets.json'
     metrics_path: /snmp
     params:
       module: [if_mib]

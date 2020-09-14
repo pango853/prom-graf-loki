@@ -1,0 +1,17 @@
+[
+  {
+    "targets": [ "172.22.0.1" ],
+    "labels": {
+      "env": "prod",
+      "job": "snmp"
+    }
+  },
+  {
+    "targets": [ "172.16.4.5" ],
+    "labels": {
+      "env": "prod",
+      "job": "snmp"
+    }
+  }
+]
+
