@@ -20,6 +20,7 @@ services:
     links:
       - cadvisor:cadvisor
       - node-exporter:node-exporter
+      - snmp-exporter:snmp-exporter
     networks:
       - promnet
 
@@ -68,6 +69,19 @@ services:
       - 3000:3000
     networks:
       - promnet
+
+  snmp-exporter:
+    image: prom/snmp-exporter:v0.19.0
+    restart: "no"
+    expose:
+      - 9116
+    #ports:
+    #  # For debugging
+    #  - 3000:3000
+    networks:
+      - promnet
+
+
 
 networks:
   promnet:
