@@ -1,0 +1,17 @@
+[
+  {
+    "targets": [ "172.16.4.4:9100" ],
+    "labels": {
+      "env": "dev",
+      "job": "node"
+    }
+  },
+  {
+    "targets": [ "172.16.4.5:9100" ],
+    "labels": {
+      "env": "dev",
+      "job": "node"
+    }
+  }
+]
+

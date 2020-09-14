@@ -28,7 +28,12 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-         - targets: ['localhost:9090','cadvisor:8080','node-exporter:9100', 'nginx-exporter:9113','172.16.4.5:9100']
+         - targets: ['localhost:9090','cadvisor:8080','node-exporter:9100', 'nginx-exporter:9113']
+
+  - job_name: 'node'
+    file_sd_configs:
+      - files:
+        - '/etc/prometheus/sd_configs/prod/node_*.json'
 
   - job_name: 'snmp'
     static_configs:

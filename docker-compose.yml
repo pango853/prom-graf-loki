@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./conf/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./conf/sd_configs:/etc/prometheus/sd_configs:ro
       - ./data/prometheus:/var/lib/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
